@@ -59,7 +59,7 @@ class AbstractPhp < Formula
     depends_on "libsodium" => :recommended if name.split("::")[2].downcase.start_with?("php72")
 
     # libzip if required
-    depends_on "libzip" => :optional if name.split("::")[2].downcase.start_with?("php56", "php7")
+    depends_on "libzip" => :recommended if name.split("::")[2].downcase.start_with?("php56", "php7")
 
     deprecated_option "with-pgsql" => "with-postgresql"
     depends_on "postgresql" => :optional
@@ -101,7 +101,6 @@ class AbstractPhp < Formula
       option "with-phpdbg", "Enable building of the phpdbg SAPI executable"
     end
     option "with-thread-safety", "Build with thread safety"
-    option "with-libzip", "Include Libzip support via Homebrew"
     option "without-bz2", "Build without bz2 support"
     option "without-fpm", "Disable building of the fpm SAPI executable"
     option "without-ldap", "Build without LDAP support"
